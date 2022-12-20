@@ -23,3 +23,9 @@ spring:
             - Path=/api/customer/**
           filters:
             - StripPrefix=2
+        - id: fraquivel-service
+            uri: http://fraquivel-service
+            predicates:
+              - Path=/api/fraquivel/**
+            filters:
+              - StripPrefix=2
