@@ -59,7 +59,7 @@ public class ApiGatewayController {
 
     }
     @GetMapping(value = "fraquivel/owners/{ownerId}")
-    public Mono<OwnerDetails> getOwnerDetails(final @PathVariable int ownerId) {
+    public Mono<OwnerDetails> getOwnerDetailsOnFraquivelService(final @PathVariable int ownerId) {
         return customersServiceClient.getOwner(ownerId)
             .flatMap(owner ->
                 visitsServiceClient.getVisitsForPets(owner.getPetIds())
